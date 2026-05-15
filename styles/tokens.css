@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=DM+Serif+Display&display=swap');
+
+:root {
+  /* ── DARK MODE (default) ── */
+  --bg-primary: #050508;
+  --bg-secondary: #0A0A12;
+  --bg-elevated: #0F0F1A;
+  --surface-glass: rgba(255,255,255,0.04);
+  --surface-glass-hover: rgba(255,255,255,0.08);
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-glow: rgba(99,179,237,0.2);
+  --accent-primary: #63B3ED;
+  --accent-secondary: #9F7AEA;
+  --accent-tertiary: #4FD1C5;
+  --accent-glow-blue: rgba(99,179,237,0.15);
+  --accent-glow-purple: rgba(159,122,234,0.12);
+  --text-primary: #F7FAFC;
+  --text-secondary: #CBD5E0;
+  --text-muted: #718096;
+  --text-accent: #63B3ED;
+  --gradient-hero: linear-gradient(135deg, #63B3ED 0%, #9F7AEA 50%, #4FD1C5 100%);
+  --gradient-dark: linear-gradient(180deg, #050508 0%, #0A0A12 100%);
+  --glow-hero: radial-gradient(circle, rgba(99,179,237,0.4) 0%, transparent 70%);
+  --transition-theme: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── FONTS ── */
+  --font-display: 'Bebas Neue', 'DM Serif Display', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ── TYPE SCALE ── */
+  --text-hero: clamp(64px, 10vw, 120px);
+  --text-tagline: clamp(18px, 2.5vw, 36px);
+  --text-section: clamp(36px, 5vw, 72px);
+  --text-subsection: clamp(24px, 3vw, 44px);
+  --text-body-lg: clamp(18px, 1.5vw, 22px);
+  --text-body: clamp(15px, 1.2vw, 18px);
+  --text-label: 13px;
+  --text-caption: 13px;
+  --text-mono: 13px;
+
+  /* ── SPACING (8px grid) ── */
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px;
+  --s6: 48px; --s8: 64px; --s12: 96px; --s16: 128px;
+
+  /* ── RADII ── */
+  --r-sm: 8px; --r-md: 16px; --r-lg: 24px; --r-pill: 999px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #FAFBff;
+  --bg-secondary: #F0F4FF;
+  --bg-elevated: #FFFFFF;
+  --surface-glass: rgba(255,255,255,0.7);
+  --surface-glass-hover: rgba(255,255,255,0.9);
+  --border-subtle: rgba(0,0,0,0.06);
+  --border-glow: rgba(99,179,237,0.3);
+  --accent-primary: #3182CE;
+  --accent-secondary: #6B46C1;
+  --accent-tertiary: #319795;
+  --accent-glow-blue: rgba(49,130,206,0.1);
+  --accent-glow-purple: rgba(107,70,193,0.08);
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  --text-muted: #A0AEC0;
+  --text-accent: #3182CE;
+  --gradient-hero: linear-gradient(135deg, #3182CE 0%, #6B46C1 60%, #2C7A7B 100%);
+  --gradient-dark: linear-gradient(180deg, #FAFBff 0%, #F0F4FF 100%);
+}
