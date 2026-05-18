@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap');
 
 :root {
   /* ── DARK MODE (default) ── */
@@ -25,19 +25,37 @@
 
   /* ── FONTS ── */
   --font-display: 'Bebas Neue', 'DM Serif Display', serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-body: 'Sora', 'Outfit', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* ── TYPE SCALE ── */
-  --text-hero: clamp(64px, 10vw, 120px);
-  --text-tagline: clamp(18px, 2.5vw, 36px);
-  --text-section: clamp(36px, 5vw, 72px);
-  --text-subsection: clamp(24px, 3vw, 44px);
-  --text-body-lg: clamp(18px, 1.5vw, 22px);
-  --text-body: clamp(15px, 1.2vw, 18px);
+  /* ── TYPE SCALE (8px grid, fluid) ── */
+  /* Hero: 96–120px / weight 900 / ls -0.02em */
+  --text-hero: clamp(72px, 9vw, 120px);
+  --text-hero-weight: 900;
+  --text-hero-ls: -0.02em;
+  /* Tagline: 28–36px / weight 300 / ls 0.08em */
+  --text-tagline: clamp(20px, 2.2vw, 34px);
+  --text-tagline-weight: 300;
+  --text-tagline-ls: 0.08em;
+  /* Section: 56–72px / weight 700 / ls -0.01em */
+  --text-section: clamp(40px, 5.5vw, 72px);
+  --text-section-weight: 700;
+  --text-section-ls: -0.01em;
+  /* Subsection: 36–44px / weight 600 */
+  --text-subsection: clamp(26px, 3vw, 44px);
+  /* Body large: 20–22px / weight 400 / ls 0.01em */
+  --text-body-lg: clamp(17px, 1.4vw, 22px);
+  /* Body: 16–18px / weight 400 / ls 0.015em */
+  --text-body: clamp(15px, 1.1vw, 18px);
+  /* Label/tag: 12–13px / weight 600 / ls 0.12em uppercase */
   --text-label: 13px;
+  --text-label-weight: 600;
+  --text-label-ls: 0.12em;
+  /* Caption: 13–14px / ls 0.02em */
   --text-caption: 13px;
+  /* Mono accent: 13–14px / ls 0.05em */
   --text-mono: 13px;
+  --text-mono-ls: 0.05em;
 
   /* ── SPACING (8px grid) ── */
   --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px;
