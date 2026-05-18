@@ -315,3 +315,38 @@ if (window.matchMedia('(pointer: fine)').matches) {
     glow.style.top = e.clientY + 'px';
   }, { passive: true });
 }
+
+// ── MULTI-PAGE: nav active link ──
+(function(){
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link, .mob-link').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const base = href.split('/').pop();
+    if (base === path) link.classList.add('active');
+    else link.classList.remove('active');
+  });
+})();
+
+// ── PAGE TRANSITION LINKS (all pages) ──
+document.querySelectorAll('[data-page]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.includes('.pdf')) return;
+    e.preventDefault();
+    if (window.pageWipe) window.pageWipe(() => { window.location.href = href; });
+    else window.location.href = href;
+  });
+});
+
+// ── MOBILE MENU ──
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+if (ham && mob) {
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  mob.querySelectorAll('.mob-link').forEach(l => {
+    l.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); });
+  });
+}

@@ -5,7 +5,43 @@
 (function() {
 'use strict';
 
-// ── 1. INJECT LOADER HTML ────────────────────
+const isHome = ['', 'index.html', '/'].includes(
+  window.location.pathname.split('/').pop()
+);
+
+// ── PAGE WIPE (exported — available on all pages) ────
+window.pageWipe = function(callback) {
+  const wipe = document.getElementById('pageWipe');
+  if (!wipe) { if (callback) callback(); return; }
+  wipe.classList.remove('wipe-out');
+  wipe.classList.add('wipe-in');
+  wipe.style.pointerEvents = 'all';
+  setTimeout(() => {
+    if (callback) callback();
+    wipe.classList.remove('wipe-in');
+    wipe.classList.add('wipe-out');
+    setTimeout(() => {
+      wipe.style.pointerEvents = 'none';
+      wipe.classList.remove('wipe-out');
+    }, 420);
+  }, 420);
+};
+
+// ── INNER PAGES: instant reveal ─────────────────────
+if (!isHome) {
+  document.documentElement.style.opacity = '0';
+  document.documentElement.style.transition = 'opacity 0.35s ease';
+  const reveal = () => { document.documentElement.style.opacity = '1'; };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', reveal);
+  } else {
+    requestAnimationFrame(reveal);
+  }
+  document.body.insertAdjacentHTML('afterbegin', '<div id="pageWipe"></div>');
+  return;
+}
+
+// ── HOME PAGE: full loading sequence ─────────────────
 const loaderHTML = `
 <div id="loader">
   <svg id="loaderMonogram" width="120" height="100" viewBox="0 0 120 100" fill="none"
