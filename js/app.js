@@ -207,6 +207,7 @@ const revealObs = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach((el, i) => {
+  if (el.closest('#home')) return; // hero handled by loader cascade
   el.style.transitionDelay = `${(i % 4) * 0.08}s`;
   revealObs.observe(el);
 });

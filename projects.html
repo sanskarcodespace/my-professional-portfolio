@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Projects — Sanskar Sharma</title>
+<meta name="description" content="Projects by Sanskar Sharma — Auto Payment Reminder App and more."/>
+<link rel="stylesheet" href="styles/tokens.css"/>
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/typography.css"/>
+<link rel="stylesheet" href="styles/animations.css"/>
+<link rel="stylesheet" href="styles/pages.css"/>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<div id="cursor-dot"></div><div id="cursor-ring"><span id="cursor-label"></span></div>
+<div id="pageWipe"></div>
+
+<nav class="nav" id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo" data-page><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link" data-page data-magnetic>Home</a></li>
+    <li><a href="about.html" class="nav-link" data-page data-magnetic>About</a></li>
+    <li><a href="projects.html" class="nav-link active" data-magnetic>Projects</a></li>
+    <li><a href="skills.html" class="nav-link" data-page data-magnetic>Skills</a></li>
+    <li><a href="experience.html" class="nav-link" data-page data-magnetic>Experience</a></li>
+    <li><a href="journey.html" class="nav-link" data-page data-magnetic>Journey</a></li>
+    <li><a href="contact.html" class="nav-link cta-nav" data-page data-magnetic>Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-track"><span class="toggle-thumb">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner"><ul>
+  <li><a href="index.html" class="mob-link" data-page>Home</a></li>
+  <li><a href="about.html" class="mob-link" data-page>About</a></li>
+  <li><a href="projects.html" class="mob-link">Projects</a></li>
+  <li><a href="skills.html" class="mob-link" data-page>Skills</a></li>
+  <li><a href="experience.html" class="mob-link" data-page>Experience</a></li>
+  <li><a href="journey.html" class="mob-link" data-page>Journey</a></li>
+  <li><a href="contact.html" class="mob-link" data-page>Contact</a></li>
+</ul></div></div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero projects-hero">
+  <div class="page-hero-orb orb-blue"></div>
+  <div class="page-hero-orb orb-purple"></div>
+  <div class="projects-dots-grid"></div>
+  <div class="container page-hero-inner">
+    <h1 class="projects-word reveal">WORK</h1>
+    <p class="projects-subtext reveal">Products built with intention and precision.</p>
+  </div>
+</section>
+
+<!-- ── FEATURED PROJECT ── -->
+<section class="proj-feature-section">
+  <div class="container">
+    <div class="proj-feature-card glass-card reveal">
+      <div class="pf-animated-border"></div>
+      <div class="pf-left">
+        <div class="pf-eyebrow">
+          <span class="pf-blink"></span>FEATURED PROJECT 01
+        </div>
+        <h2 class="pf-title">Auto Payment<br/><span class="gradient-text">Reminder</span></h2>
+        <p class="pf-tagline">Smart payment tracking and automated reminder system for effortless financial management.</p>
+        <p class="pf-desc">Built from the ground up with Python and Flask, this app tracks due dates, sends automated reminders, and keeps your finances in order — no manual work required. Deployed live on Vercel.</p>
+        <div class="pf-tags">
+          <span class="tech-pill">HTML</span>
+          <span class="tech-pill">CSS</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Flask</span>
+          <span class="tech-pill">REST APIs</span>
+        </div>
+        <div class="pf-ctas">
+          <a href="https://github.com/sanskarcodespace/AUTO-PAYMENT" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+          </a>
+          <a href="https://auto-payment-rwzy.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Live Demo →</a>
+        </div>
+      </div>
+      <div class="pf-right">
+        <div class="pf-mockup-glow"></div>
+        <div class="pf-device">
+          <div class="pf-browser">
+            <div class="browser-bar">
+              <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+              <span class="b-url">auto-payment-rwzy.vercel.app</span>
+            </div>
+            <div class="pf-screen">
+              <div class="pf-app-header">💳 Auto Payment Reminder</div>
+              <div class="pf-app-card">
+                <div class="pf-app-row"><span class="pf-app-label">EMI — HDFC</span><span class="pf-app-due warn">Due in 3 days</span></div>
+                <div class="pf-app-row"><span class="pf-app-label">Insurance</span><span class="pf-app-due ok">Paid ✓</span></div>
+                <div class="pf-app-row"><span class="pf-app-label">Subscription</span><span class="pf-app-due warn">Due in 7 days</span></div>
+              </div>
+              <div class="pf-app-btn">Send All Reminders →</div>
+              <div class="pf-app-stat">3 payments tracked · ₹ 24,500 total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMING SOON CARDS ── -->
+<section class="coming-soon-section">
+  <div class="container">
+    <div class="cs-grid">
+      <div class="cs-card reveal">
+        <div class="cs-shimmer"></div>
+        <div class="cs-border"></div>
+        <canvas class="cs-particles" width="400" height="260"></canvas>
+        <div class="cs-content">
+          <div class="cs-plus">+</div>
+          <div class="cs-next">Next Project</div>
+          <div class="cs-hint">Something exciting is being built...</div>
+        </div>
+        <div class="cs-tooltip">Stay Tuned</div>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-shimmer"></div>
+        <div class="cs-border"></div>
+        <canvas class="cs-particles" width="400" height="260"></canvas>
+        <div class="cs-content">
+          <div class="cs-plus">+</div>
+          <div class="cs-next">Next Project</div>
+          <div class="cs-hint">Something exciting is being built...</div>
+        </div>
+        <div class="cs-tooltip">Stay Tuned</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span class="footer-logo"><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span> Sanskar Sharma</span>
+  <span class="footer-copy">© 2025 · Built with obsession ✦</span>
+  <a href="#" class="footer-top">↑ Back to top</a>
+</div></footer>
+
+<script src="js/loader.js"></script>
+<script src="js/app.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/projects.js"></script>
+</body></html>

@@ -104,7 +104,8 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
 
 /* ── GLASS CARDS ── */
 .glass-card{background:var(--surface-glass);backdrop-filter:blur(20px);border:1px solid var(--border-subtle);border-radius:var(--r-lg);transition:all .4s ease;}
-.glass-card:hover{background:var(--surface-glass-hover);border-color:rgba(99,179,237,.4);box-shadow:0 0 40px rgba(99,179,237,.08),0 16px 40px rgba(0,0,0,.2);}
+/* glass-card hover handled by animations.css */
+
 
 /* ── ABOUT ── */
 .about-section{background:var(--bg-secondary);}
@@ -213,9 +214,8 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
 .footer-top{font-size:13px;color:var(--accent-primary);text-decoration:none;transition:all .3s;}
 .footer-top:hover{text-shadow:0 0 20px var(--accent-primary);}
 
-/* ── REVEAL ANIMATION ── */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
+/* reveal handled by animations.css */
+
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){

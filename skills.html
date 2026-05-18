@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Skills — Sanskar Sharma</title>
+<meta name="description" content="Sanskar Sharma's skills — frontend, backend, tools, AI, and design."/>
+<link rel="stylesheet" href="styles/tokens.css"/>
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/typography.css"/>
+<link rel="stylesheet" href="styles/animations.css"/>
+<link rel="stylesheet" href="styles/pages.css"/>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<div id="cursor-dot"></div><div id="cursor-ring"><span id="cursor-label"></span></div>
+<div id="pageWipe"></div>
+<nav class="nav" id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo" data-page><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link" data-page data-magnetic>Home</a></li>
+    <li><a href="about.html" class="nav-link" data-page data-magnetic>About</a></li>
+    <li><a href="projects.html" class="nav-link" data-page data-magnetic>Projects</a></li>
+    <li><a href="skills.html" class="nav-link active" data-magnetic>Skills</a></li>
+    <li><a href="experience.html" class="nav-link" data-page data-magnetic>Experience</a></li>
+    <li><a href="journey.html" class="nav-link" data-page data-magnetic>Journey</a></li>
+    <li><a href="contact.html" class="nav-link cta-nav" data-page data-magnetic>Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-track"><span class="toggle-thumb">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner"><ul>
+  <li><a href="index.html" class="mob-link" data-page>Home</a></li>
+  <li><a href="about.html" class="mob-link" data-page>About</a></li>
+  <li><a href="projects.html" class="mob-link" data-page>Projects</a></li>
+  <li><a href="skills.html" class="mob-link">Skills</a></li>
+  <li><a href="experience.html" class="mob-link" data-page>Experience</a></li>
+  <li><a href="journey.html" class="mob-link" data-page>Journey</a></li>
+  <li><a href="contact.html" class="mob-link" data-page>Contact</a></li>
+</ul></div></div>
+
+<section class="page-hero">
+  <div class="page-hero-orb orb-blue"></div><div class="page-hero-orb orb-purple"></div>
+  <div class="container page-hero-inner">
+    <div class="page-label reveal">// Arsenal</div>
+    <h1 class="page-hero-title reveal">Skills &amp; <span class="gradient-text">Arsenal</span></h1>
+    <p class="page-hero-sub reveal">The technologies and tools that power my work.</p>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="skills-section">
+  <div class="container">
+    <div class="skill-tabs reveal" role="tablist">
+      <button class="skill-tab active" data-tab="frontend">Frontend</button>
+      <button class="skill-tab" data-tab="backend">Backend</button>
+      <button class="skill-tab" data-tab="tools">Tools</button>
+      <button class="skill-tab" data-tab="ai">AI Tools</button>
+      <button class="skill-tab" data-tab="design">Design</button>
+    </div>
+
+    <!-- Frontend -->
+    <div class="skill-panel active" id="tab-frontend">
+      <div class="skill-grid">
+        <div class="sk-card glass-card core-skill project-card"><div class="sk-icon">🌐</div><div class="sk-name">HTML5</div><div class="sk-bar"><div class="sk-fill" style="width:95%;background:#E34F26"></div></div><div class="sk-level">Expert</div><span class="core-badge">Core Skill</span></div>
+        <div class="sk-card glass-card core-skill project-card"><div class="sk-icon">🎨</div><div class="sk-name">CSS3</div><div class="sk-bar"><div class="sk-fill" style="width:90%;background:#264DE4"></div></div><div class="sk-level">Expert</div><span class="core-badge">Core Skill</span></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">📱</div><div class="sk-name">Responsive Design</div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div><div class="sk-level">Advanced</div></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">⚡</div><div class="sk-name">JavaScript</div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:#c9b800"></div></div><div class="sk-level">Advanced</div></div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skill-panel" id="tab-backend">
+      <div class="skill-grid">
+        <div class="sk-card glass-card project-card"><div class="sk-icon">🔧</div><div class="sk-name">Flask</div><div class="sk-bar"><div class="sk-fill" style="width:78%"></div></div><div class="sk-level">Advanced</div><p class="sk-desc">Building REST APIs and server-side logic for full-stack applications.</p></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">🔗</div><div class="sk-name">REST APIs</div><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div><div class="sk-level">Advanced</div><p class="sk-desc">Designing and consuming RESTful services with authentication and data validation.</p></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">🐍</div><div class="sk-name">Python</div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:#3776AB"></div></div><div class="sk-level">Advanced</div><p class="sk-desc">Core language for backend logic, automation, and AI integrations.</p></div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-panel" id="tab-tools">
+      <div class="tools-badges">
+        <div class="tool-badge glass-card"><div class="tb-icon">🐙</div><span>GitHub</span></div>
+        <div class="tool-badge glass-card"><div class="tb-icon">💻</div><span>VS Code</span></div>
+        <div class="tool-badge glass-card"><div class="tb-icon">📡</div><span>Postman</span></div>
+        <div class="tool-badge glass-card"><div class="tb-icon">☁️</div><span>Cloudflare Tunnel</span></div>
+        <div class="tool-badge glass-card"><div class="tb-icon">▲</div><span>Vercel</span></div>
+      </div>
+    </div>
+
+    <!-- AI Tools -->
+    <div class="skill-panel" id="tab-ai">
+      <div class="ai-header"><div class="ai-brain">🧠</div><span>AI-Native Workflow</span></div>
+      <canvas id="aiConstellation" width="800" height="420"></canvas>
+      <div class="ai-legend">
+        <span class="ai-node-label" data-node="Claude">Claude</span>
+        <span class="ai-node-label" data-node="ChatGPT">ChatGPT</span>
+        <span class="ai-node-label" data-node="Gemini">Gemini</span>
+        <span class="ai-node-label" data-node="Gamma AI">Gamma AI</span>
+        <span class="ai-node-label" data-node="Antigravity">Antigravity</span>
+        <span class="ai-node-label" data-node="FlutterFlow">FlutterFlow</span>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="skill-panel" id="tab-design">
+      <div class="skill-grid">
+        <div class="sk-card glass-card project-card core-skill"><div class="sk-icon">🎭</div><div class="sk-name">Figma</div><div class="sk-bar"><div class="sk-fill" style="width:75%;background:#F24E1E"></div></div><div class="sk-level">Proficient</div><span class="core-badge">Primary Tool</span></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">🎨</div><div class="sk-name">Canva</div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div><div class="sk-level">Advanced</div></div>
+        <div class="sk-card glass-card project-card"><div class="sk-icon">🧵</div><div class="sk-name">Stitch</div><div class="sk-bar"><div class="sk-fill" style="width:65%"></div></div><div class="sk-level">Proficient</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="tech-philosophy">
+  <div class="container">
+    <div class="philosophy-line"></div>
+    <blockquote class="philosophy-quote reveal">
+      "I don't just use tools.<br/><span class="gradient-text">I use them to think.</span>"
+    </blockquote>
+    <p class="philosophy-body reveal">Technology is the medium, not the message. My goal is always to build something that outlasts the tools it was built with.</p>
+    <div class="philosophy-line"></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span class="footer-logo"><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span> Sanskar Sharma</span>
+  <span class="footer-copy">© 2025 · Built with obsession ✦</span>
+  <a href="#" class="footer-top">↑ Back to top</a>
+</div></footer>
+<script src="js/loader.js"></script>
+<script src="js/app.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/skills.js"></script>
+</body></html>

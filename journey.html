@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Journey — Sanskar Sharma</title>
+<meta name="description" content="Sanskar Sharma's journey — from curiosity to craft, from ideas to impact."/>
+<link rel="stylesheet" href="styles/tokens.css"/>
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/typography.css"/>
+<link rel="stylesheet" href="styles/animations.css"/>
+<link rel="stylesheet" href="styles/pages.css"/>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<div id="cursor-dot"></div><div id="cursor-ring"><span id="cursor-label"></span></div>
+<div id="pageWipe"></div>
+<nav class="nav" id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo" data-page><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link" data-page data-magnetic>Home</a></li>
+    <li><a href="about.html" class="nav-link" data-page data-magnetic>About</a></li>
+    <li><a href="projects.html" class="nav-link" data-page data-magnetic>Projects</a></li>
+    <li><a href="skills.html" class="nav-link" data-page data-magnetic>Skills</a></li>
+    <li><a href="experience.html" class="nav-link" data-page data-magnetic>Experience</a></li>
+    <li><a href="journey.html" class="nav-link active" data-magnetic>Journey</a></li>
+    <li><a href="contact.html" class="nav-link cta-nav" data-page data-magnetic>Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-track"><span class="toggle-thumb">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner"><ul>
+  <li><a href="index.html" class="mob-link" data-page>Home</a></li>
+  <li><a href="about.html" class="mob-link" data-page>About</a></li>
+  <li><a href="projects.html" class="mob-link" data-page>Projects</a></li>
+  <li><a href="skills.html" class="mob-link" data-page>Skills</a></li>
+  <li><a href="experience.html" class="mob-link" data-page>Experience</a></li>
+  <li><a href="journey.html" class="mob-link">Journey</a></li>
+  <li><a href="contact.html" class="mob-link" data-page>Contact</a></li>
+</ul></div></div>
+
+<!-- HERO -->
+<section class="page-hero journey-hero">
+  <div class="journey-deep-particles" id="journeyParticles"></div>
+  <div class="page-hero-orb orb-blue" style="opacity:.12"></div>
+  <div class="page-hero-orb orb-purple" style="opacity:.1"></div>
+  <div class="container page-hero-inner journey-hero-inner">
+    <div class="page-label reveal">// Origin Story</div>
+    <h1 class="journey-hero-title">
+      <span class="jh-word reveal">THE</span>
+      <span class="jh-word reveal" style="animation-delay:.08s">JOURNEY</span>
+    </h1>
+    <p class="journey-hero-sub reveal">From curiosity to craft. From ideas to impact.</p>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="container">
+    <div class="chapter reveal-left">
+      <div class="ch-number">01</div>
+      <div class="ch-body">
+        <div class="ch-tag">The Spark</div>
+        <h2 class="ch-title">The First Line of Code</h2>
+        <p class="ch-text">It started with pure curiosity — no roadmap, no mentor, just me and a blinking cursor. The moment I ran my first Python script and saw it actually do something, I was hooked. That feeling of making a machine obey a thought has never left me.</p>
+        <div class="ch-code-bg"><code>print("Hello, World!")</code></div>
+      </div>
+    </div>
+
+    <div class="chapter reverse reveal-right">
+      <div class="ch-number">02</div>
+      <div class="ch-body">
+        <div class="ch-tag">The Foundation</div>
+        <h2 class="ch-title">Learning to Build</h2>
+        <p class="ch-text">I moved from Python to HTML, CSS, JavaScript — building web pages that actually looked like things. Each project was messier than the last, and each one taught me something no tutorial covered. I learned to embrace the broken builds and love the debugging.</p>
+        <div class="ch-wireframe">
+          <div class="wf-bar wf-h"></div>
+          <div class="wf-row"><div class="wf-box big"></div><div class="wf-col"><div class="wf-box"></div><div class="wf-box sm"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter reveal-left">
+      <div class="ch-number">03</div>
+      <div class="ch-body">
+        <div class="ch-tag">The Leap</div>
+        <h2 class="ch-title">Entering the Real World</h2>
+        <p class="ch-text">B.Tech at Manav Rachna gave me structure. PixiePlot gave me stakes. Working on a real product — with real users — changed everything. I stopped thinking like a student and started thinking like someone who has to ship.</p>
+        <div class="ch-badges-row">
+          <div class="ch-badge"><span>🎓</span> B.Tech CSE</div>
+          <div class="ch-badge active-bg"><span>⚡</span> PixiePlot Intern</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter reverse reveal-right">
+      <div class="ch-number">04</div>
+      <div class="ch-body">
+        <div class="ch-tag">The Build</div>
+        <h2 class="ch-title">Shipping Real Products</h2>
+        <p class="ch-text">Building the Auto Payment Reminder App was my first "real" product — one that's live, deployed, and actually does what it promises. That first Vercel deployment URL hit different. The gap between "I built this" and "this is live" is everything.</p>
+        <div class="ch-mini-mockup glass-card">
+          <div class="cmm-bar"><span></span><span></span><span></span></div>
+          <div class="cmm-title">💳 Auto Payment Reminder</div>
+          <div class="cmm-status"><span class="cmm-dot"></span> Live on Vercel</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter future-chapter reveal-left">
+      <div class="ch-number future-num">05</div>
+      <div class="ch-body">
+        <div class="ch-tag future-tag">The Vision</div>
+        <h2 class="ch-title">What's Coming</h2>
+        <p class="ch-text">More products. Deeper AI integration. Founding something that lasts. The plan isn't to wait until I'm "ready" — it's to keep building until I look back and realise I already started.</p>
+        <div class="future-horizon">
+          <div class="fh-line"></div>
+          <div class="fh-stars">✦ ✦ ✦</div>
+          <div class="fh-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto-section">
+  <div class="manifesto-glow"></div>
+  <div class="container manifesto-inner">
+    <blockquote class="manifesto-quote reveal">
+      "I don't wait for the future.<br/><span class="gradient-text">I build it."</span>
+    </blockquote>
+    <p class="manifesto-body reveal">I believe ambition without action is just noise. So I code, I ship, I learn, and I repeat. Every project is a step toward the company I'll found — and the impact I'll make.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="journey-stats-section">
+  <div class="container">
+    <div class="jstats-grid">
+      <div class="jstat reveal">
+        <div class="jstat-icon">⏱️</div>
+        <div class="jstat-num" data-count="2">0</div>
+        <div class="jstat-suffix">+</div>
+        <div class="jstat-label">Years Coding</div>
+      </div>
+      <div class="jstat reveal">
+        <div class="jstat-icon">🚀</div>
+        <div class="jstat-num" data-count="5">0</div>
+        <div class="jstat-suffix">+</div>
+        <div class="jstat-label">Projects Shipped</div>
+      </div>
+      <div class="jstat reveal">
+        <div class="jstat-icon">🔬</div>
+        <div class="jstat-num" data-count="10">0</div>
+        <div class="jstat-suffix">+</div>
+        <div class="jstat-label">Technologies</div>
+      </div>
+      <div class="jstat reveal">
+        <div class="jstat-icon">⭐</div>
+        <div class="jstat-num" data-count="1">0</div>
+        <div class="jstat-suffix"></div>
+        <div class="jstat-label">Startup Dream</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span class="footer-logo"><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span> Sanskar Sharma</span>
+  <span class="footer-copy">© 2025 · Built with obsession ✦</span>
+  <a href="#" class="footer-top">↑ Back to top</a>
+</div></footer>
+<script src="js/loader.js"></script>
+<script src="js/app.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/journey.js"></script>
+</body></html>
