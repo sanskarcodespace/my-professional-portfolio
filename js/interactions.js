@@ -12,13 +12,14 @@ const isFine = window.matchMedia('(pointer: fine)').matches;
 // CUSTOM CURSOR — spring physics
 // ════════════════════════════════════════════
 if (isFine) {
-  // Inject cursor elements
-  const dot  = document.createElement('div'); dot.id  = 'cursor-dot';
-  const ring = document.createElement('div'); ring.id = 'cursor-ring';
-  const lbl  = document.createElement('span'); lbl.id = 'cursor-label';
-  ring.appendChild(lbl);
-  document.body.appendChild(dot);
-  document.body.appendChild(ring);
+  // Reuse existing elements from HTML, or create if missing
+  let dot  = document.getElementById('cursor-dot');
+  let ring = document.getElementById('cursor-ring');
+  let lbl  = document.getElementById('cursor-label');
+  if (!dot)  { dot  = document.createElement('div');  dot.id  = 'cursor-dot';  document.body.appendChild(dot); }
+  if (!ring) { ring = document.createElement('div');  ring.id = 'cursor-ring'; document.body.appendChild(ring); }
+  if (!lbl)  { lbl  = document.createElement('span'); lbl.id  = 'cursor-label'; ring.appendChild(lbl); }
+
 
   let mx = window.innerWidth  / 2;
   let my = window.innerHeight / 2;

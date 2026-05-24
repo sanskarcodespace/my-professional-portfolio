@@ -194,39 +194,53 @@ const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     const el = e.target;
-    // Generic reveal
-    if (el.classList.contains('reveal')) {
-      el.classList.add('visible');
-    }
-    // Section title word reveal
-    if (el.classList.contains('section-title')) {
-      el.classList.add('words-visible');
-    }
+    if (el.classList.contains('reveal')) el.classList.add('visible');
+    if (el.classList.contains('section-title')) el.classList.add('words-visible');
     revealObs.unobserve(el);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05, rootMargin: '200px 0px 0px 0px' });
 
-document.querySelectorAll('.reveal').forEach((el, i) => {
+document.querySelectorAll('.reveal, .section-title').forEach((el, i) => {
   if (el.closest('#home')) return; // hero handled by loader cascade
-  el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+  el.style.transitionDelay = `${(i % 4) * 0.07}s`;
   revealObs.observe(el);
 });
-document.querySelectorAll('.section-title').forEach(el => {
-  revealObs.observe(el);
-});
+
+// Force-reveal anything already visible in viewport on page load
+function forceRevealVisible() {
+  document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible)').forEach(el => {
+    if (el.closest('#home')) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(forceRevealVisible, 50);
+    setTimeout(forceRevealVisible, 300);
+    setTimeout(forceRevealVisible, 800);
+  });
+} else {
+  setTimeout(forceRevealVisible, 50);
+  setTimeout(forceRevealVisible, 300);
+  setTimeout(forceRevealVisible, 800);
+}
 
 // ── PARTICLES ──────────────────────────────
 const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
+if (!canvas || !ctx) { /* no particle canvas on this page */ }
 let particles = [];
 let animId;
 
 function resize() {
+  if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
-window.addEventListener('resize', resize, { passive: true });
-resize();
+if (canvas) { window.addEventListener('resize', resize, { passive: true }); resize(); }
 
 function initParticles() {
   cancelAnimationFrame(animId);
@@ -284,10 +298,11 @@ function animate() {
   }
   animId = requestAnimationFrame(animate);
 }
-initParticles();
+if (canvas && ctx) initParticles();
 
 // ── CONTACT FORM ───────────────────────────
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+const _cf = document.getElementById('contactForm');
+if (_cf) _cf.addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type=submit]');
   btn.textContent = 'Sent! ✓';
@@ -338,15 +353,15 @@ document.querySelectorAll('[data-page]').forEach(link => {
   });
 });
 
-// ── MOBILE MENU ──
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-if (ham && mob) {
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    mob.classList.toggle('open');
+
+
+// ── SLIDE REVEALS (reveal-left / reveal-right) — all pages ──
+const slideObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      slideObs.unobserve(e.target);
+    }
   });
-  mob.querySelectorAll('.mob-link').forEach(l => {
-    l.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); });
-  });
-}
+}, { threshold: 0.08, rootMargin: '100px 0px 0px 0px' });
+document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => slideObs.observe(el));
