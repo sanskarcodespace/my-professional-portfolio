@@ -245,7 +245,10 @@ if (canvas) { window.addEventListener('resize', resize, { passive: true }); resi
 function initParticles() {
   cancelAnimationFrame(animId);
   particles = [];
-  const count = Math.min(90, Math.floor(window.innerWidth / 14));
+  const isMobile = window.innerWidth < 768;
+  const isTablet = window.innerWidth < 1200;
+  const maxParticles = isMobile ? 25 : isTablet ? 50 : 90;
+  const count = Math.min(maxParticles, Math.floor(window.innerWidth / 14));
   const isDark = root.getAttribute('data-theme') !== 'light';
   const colors = isDark
     ? ['rgba(99,179,237,', 'rgba(159,122,234,', 'rgba(79,209,197,']

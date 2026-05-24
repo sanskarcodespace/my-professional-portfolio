@@ -242,3 +242,51 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
   .tl-item{grid-template-columns:60px 16px 1fr;}
   .footer-inner{flex-direction:column;text-align:center;}
 }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — Tablet & Mobile
+════════════════════════════════════════════ */
+
+/* ── TABLET (768–1199px) ── */
+@media (max-width: 1199px) {
+  .container { max-width: 100%; padding: 0 32px; }
+  .nav-inner { padding-right: 16px; }
+  .nav-links { gap: 2px; }
+  .nav-link { font-size: 13px; padding: 8px 10px; }
+  .theme-toggle { right: 56px; }
+}
+
+/* ── MOBILE (≤ 767px) ── */
+@media (max-width: 767px) {
+  .container { padding: 0 20px; }
+
+  /* NAV */
+  .nav { padding: 0 20px; }
+  .nav-inner { height: 60px; padding-right: 0; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .theme-toggle { position: static; padding: 6px; width: 36px; height: 36px; }
+  .nav-inner > .theme-toggle { display: none; } /* hide in nav on mobile — in menu */
+  .cta-nav { display: none; } /* hide CTA in nav link list */
+
+  /* MOBILE MENU */
+  .mobile-menu { font-size: 28px; padding: 40px 24px; }
+  .mob-link { font-family: var(--font-display); font-size: 28px; font-weight: 700;
+    display: block; padding: 16px 0; text-align: center;
+    color: var(--text-primary); text-decoration: none;
+    border-bottom: 1px solid var(--border-subtle); }
+  .mobile-menu-inner ul { width: 100%; }
+
+  /* SECTION LABELS */
+  .section-label { font-size: 11px; letter-spacing: 2px; }
+  .section-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 40px; }
+
+  /* BUTTONS */
+  .btn { padding: 14px 20px; font-size: 14px; }
+
+  /* FOOTER */
+  .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+
+  /* TECH PILLS */
+  .tech-pill { font-size: 10px; padding: 3px 8px; }
+}
