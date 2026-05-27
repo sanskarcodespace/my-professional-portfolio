@@ -579,3 +579,24 @@
   .cta-actions { flex-direction: column; gap: 12px; align-items: stretch; }
   .cta-actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ════════════════════════════════════════════
+   LIGHT MODE — Home Page
+════════════════════════════════════════════ */
+[data-theme="light"] .hero { background: var(--bg-primary); }
+[data-theme="light"] .hero-orb-1 { background: radial-gradient(circle, rgba(49,130,206,0.12) 0%, transparent 70%); }
+[data-theme="light"] .hero-orb-2 { background: radial-gradient(circle, rgba(107,70,193,0.08) 0%, transparent 70%); }
+[data-theme="light"] .hero-greeting { color: var(--text-secondary); }
+[data-theme="light"] .greeting-dot { background: #319795; box-shadow: 0 0 8px rgba(49,151,149,0.5); }
+[data-theme="light"] .hero-body { color: var(--text-secondary); }
+[data-theme="light"] .hero-stat-num { color: var(--accent-primary); }
+[data-theme="light"] .typewriter-cursor { color: var(--accent-primary); }
+[data-theme="light"] .marquee-section { border-color: var(--border-subtle); background: var(--bg-secondary); }
+[data-theme="light"] .marquee-item { color: var(--text-muted); }
+[data-theme="light"] .quick-fact { background: var(--surface-glass); }
+[data-theme="light"] .browser-bar { background: #E2E8F0; }
+[data-theme="light"] .browser-body { background: #F7FAFC; }
+[data-theme="light"] .project-img-placeholder { background: var(--bg-secondary); color: var(--text-muted); }
+[data-theme="light"] .skill-teaser-card { background: var(--surface-glass); }
+[data-theme="light"] .cta-section { background: var(--bg-secondary); }
+[data-theme="light"] .hero-avatar { filter: none; }

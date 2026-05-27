@@ -810,3 +810,79 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   to   { transform: translateY(0);    opacity: 1; }
 }
 .slot-num { display: inline-block; animation: slotUp 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+
+/* ════════════════════════════════════════════
+   LIGHT MODE — Premium Parity
+════════════════════════════════════════════ */
+[data-theme="light"] #loader { background: #FAFBff; }
+[data-theme="light"] #loaderFlare {
+  background: radial-gradient(circle at 50% 50%, rgba(49,130,206,0.6) 0%, transparent 60%);
+}
+[data-theme="light"] #loaderProgressFill {
+  background: linear-gradient(90deg, #3182CE, #6B46C1, #319795);
+  box-shadow: 0 0 12px rgba(49,130,206,0.5);
+}
+[data-theme="light"] #loaderLabel { color: rgba(49,130,206,0.7); }
+
+[data-theme="light"] #pageWipe { background: #FAFBff; }
+
+[data-theme="light"] .section-scanner {
+  background: linear-gradient(90deg, transparent 0%, rgba(49,130,206,0.6) 40%, rgba(107,70,193,0.7) 60%, transparent 100%);
+  box-shadow: 0 0 8px rgba(49,130,206,0.4);
+}
+
+[data-theme="light"] #scrollProgress {
+  background: linear-gradient(to bottom, #3182CE, #6B46C1, #319795);
+  box-shadow: 0 0 6px rgba(49,130,206,0.4);
+}
+
+[data-theme="light"] #scrollTopBtn {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  color: #3182CE;
+}
+[data-theme="light"] #scrollTopBtn:hover {
+  box-shadow: 0 0 20px rgba(49,130,206,0.2), 0 8px 24px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .building-status {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .glass-card::before,
+[data-theme="light"] .sk-card::before,
+[data-theme="light"] .value-card::before,
+[data-theme="light"] .tl-card::before {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(49,130,206,0.04) 45%,
+    rgba(107,70,193,0.05) 50%,
+    rgba(49,130,206,0.04) 55%,
+    transparent 70%
+  );
+}
+
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(49,130,206,0.25);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.08), 0 0 0 1px rgba(49,130,206,0.12);
+}
+
+[data-theme="light"] .glass-card:active,
+[data-theme="light"] .tl-card:active,
+[data-theme="light"] .value-card:active {
+  box-shadow: 0 0 0 2px rgba(49,130,206,0.4), 0 0 16px rgba(49,130,206,0.1) !important;
+}
+
+[data-theme="light"] .nav-trail-dot {
+  background: rgba(49,130,206,0.4);
+}
+
+[data-theme="light"] .email-tooltip.copied {
+  background: rgba(72,187,120,0.1);
+  border-color: rgba(72,187,120,0.25);
+}
+
+[data-theme="light"] ::selection { background: rgba(49,130,206,0.2); color: #1A202C; }
+[data-theme="light"] ::-moz-selection { background: rgba(49,130,206,0.2); color: #1A202C; }

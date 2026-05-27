@@ -6,12 +6,16 @@ const root = document.documentElement;
 
 // ── THEME ──────────────────────────────────
 const toggle = document.getElementById('themeToggle');
-let dark = true;
-toggle.addEventListener('click', () => {
-  dark = !dark;
-  root.setAttribute('data-theme', dark ? 'dark' : 'light');
-  initParticles();
-});
+let dark = localStorage.getItem('theme') !== 'light';
+root.setAttribute('data-theme', dark ? 'dark' : 'light');
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    dark = !dark;
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    if (typeof initParticles === 'function') initParticles();
+  });
+}
 
 // ── NAV SCROLL ─────────────────────────────
 const nav = document.getElementById('mainNav');
