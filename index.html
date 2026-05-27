@@ -1,13 +1,210 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-professional-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sanskar Sharma — Developer · Builder · Founder</title>
+<meta name="description" content="Sanskar Sharma — Full Stack Developer, App Builder, and aspiring AI startup founder. B.Tech CSE at Manav Rachna, Product Intern at PixiePlot."/>
+
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+<!-- Preload critical fonts (display weight only) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&display=swap"/></noscript>
+
+<!-- Load remaining fonts with swap -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"/></noscript>
+
+<!-- Critical inline CSS for above-fold paint -->
+<style>
+:root{--bg-primary:#050508;--text-primary:#E2E8F0;}
+html{background:#050508;}
+body{margin:0;background:#050508;color:#E2E8F0;overflow-x:hidden;}
+#loader{position:fixed;inset:0;z-index:10000;background:#020204;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;}
+</style>
+
+<!-- Stylesheets (render-blocking but cached) -->
+<link rel="stylesheet" href="styles/tokens.css"/>
+<link rel="stylesheet" href="styles/main.css"/>
+<link rel="stylesheet" href="styles/typography.css"/>
+<link rel="stylesheet" href="styles/animations.css"/>
+<link rel="stylesheet" href="styles/home.css"/>
+</head>
+<body>
+
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+<div id="scrollProgress"></div>
+<div id="pageWipe"></div>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link active" data-magnetic>Home</a></li>
+    <li><a href="about.html" class="nav-link" data-page data-magnetic>About</a></li>
+    <li><a href="projects.html" class="nav-link" data-page data-magnetic>Projects</a></li>
+    <li><a href="skills.html" class="nav-link" data-page data-magnetic>Skills</a></li>
+    <li><a href="experience.html" class="nav-link" data-page data-magnetic>Experience</a></li>
+    <li><a href="journey.html" class="nav-link" data-page data-magnetic>Journey</a></li>
+    <li><a href="contact.html" class="nav-link cta-nav" data-page data-magnetic>Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="toggle-track"><span class="toggle-thumb">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner"><ul>
+  <li><a href="index.html" class="mob-link">Home</a></li>
+  <li><a href="about.html" class="mob-link" data-page>About</a></li>
+  <li><a href="projects.html" class="mob-link" data-page>Projects</a></li>
+  <li><a href="skills.html" class="mob-link" data-page>Skills</a></li>
+  <li><a href="experience.html" class="mob-link" data-page>Experience</a></li>
+  <li><a href="journey.html" class="mob-link" data-page>Journey</a></li>
+  <li><a href="contact.html" class="mob-link" data-page>Contact</a></li>
+</ul></div></div>
+
+<!-- ── HERO SECTION ── -->
+<section class="hero" id="home">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-greeting hero-entry"><span class="greeting-dot"></span><span class="greeting-tag">Hello, I'm</span></div>
+      <h1 class="hero-name-display hero-entry" id="heroName">
+        <span class="name-word" data-word="SANSKAR"></span><br/>
+        <span class="name-word" data-word="SHARMA"></span>
+      </h1>
+      <div class="hero-tagline-row hero-entry">
+        <span class="tagline-static">I build</span>
+        <span class="typewriter-wrap"><span id="typewriterText"></span><span class="typewriter-cursor">|</span></span>
+      </div>
+      <p class="hero-body hero-entry">Full-stack developer, product thinker, and aspiring founder — shipping code that matters from Patna to the world.</p>
+      <div class="hero-ctas hero-entry">
+        <a href="projects.html" class="btn btn-primary" data-page><span class="btn-text">View My Work</span> <span class="btn-arrow">→</span></a>
+        <a href="contact.html" class="btn btn-ghost" data-page>Get In Touch</a>
+      </div>
+      <div class="hero-stats hero-entry">
+        <div class="hero-stat"><span class="hero-stat-num">5+</span><span class="hero-stat-label">Projects</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">1</span><span class="hero-stat-label">Internship</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">∞</span><span class="hero-stat-label">Ambition</span></div>
+      </div>
+    </div>
+    <div class="hero-avatar-col hero-entry">
+      <div class="avatar-halo"></div>
+      <img src="avatar.png" alt="Sanskar Sharma" class="hero-avatar" width="320" height="400" fetchpriority="high"/>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-arrow-wrap"><div class="scroll-arrow"></div></div><span>Scroll</span></div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<section class="marquee-section" aria-hidden="true">
+  <div class="skills-marquee">
+    <div class="skills-marquee-track">
+      <span class="marquee-item">✦ JavaScript</span><span class="marquee-item">✦ Python</span><span class="marquee-item">✦ Flutter</span>
+      <span class="marquee-item">✦ Flask</span><span class="marquee-item">✦ React</span><span class="marquee-item">✦ Firebase</span>
+      <span class="marquee-item">✦ Supabase</span><span class="marquee-item">✦ Vercel</span><span class="marquee-item">✦ HTML / CSS</span>
+      <span class="marquee-item">✦ AI / LLM</span><span class="marquee-item">✦ Git</span><span class="marquee-item">✦ Figma</span>
+      <span class="marquee-item">✦ JavaScript</span><span class="marquee-item">✦ Python</span><span class="marquee-item">✦ Flutter</span>
+      <span class="marquee-item">✦ Flask</span><span class="marquee-item">✦ React</span><span class="marquee-item">✦ Firebase</span>
+      <span class="marquee-item">✦ Supabase</span><span class="marquee-item">✦ Vercel</span><span class="marquee-item">✦ HTML / CSS</span>
+      <span class="marquee-item">✦ AI / LLM</span><span class="marquee-item">✦ Git</span><span class="marquee-item">✦ Figma</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT PREVIEW ── -->
+<section class="about-preview section">
+  <div class="container">
+    <div class="about-preview-grid">
+      <div class="about-preview-text">
+        <div class="section-label reveal">// About Me</div>
+        <h2 class="section-title reveal">I build things<br/><span class="gradient-text">that matter.</span></h2>
+        <p class="reveal">I'm a 19-year-old developer from Patna, currently interning as a Product Developer at PixiePlot. I don't just write code — I think about the product, the user, and the business behind every commit.</p>
+        <a href="about.html" class="btn btn-ghost reveal" data-page>Read My Story →</a>
+      </div>
+      <div class="about-quick-facts">
+        <div class="quick-fact glass-card reveal"><span class="qf-value">19</span><span class="qf-label">Years Old</span></div>
+        <div class="quick-fact glass-card reveal"><span class="qf-value">B.Tech</span><span class="qf-label">CSE Student</span></div>
+        <div class="quick-fact glass-card reveal"><span class="qf-value">5+</span><span class="qf-label">Projects</span></div>
+        <div class="quick-fact glass-card reveal"><span class="qf-value">1yr</span><span class="qf-label">Internship</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED PROJECT ── -->
+<section class="featured-project section">
+  <div class="container">
+    <div class="section-label reveal">// Featured</div>
+    <div class="featured-project-card glass-card reveal">
+      <div class="fp-left">
+        <span class="fp-eyebrow">01 — FEATURED PROJECT</span>
+        <h3 class="fp-title">Auto Payment<br/><span class="gradient-text">Reminder</span></h3>
+        <p class="fp-desc">Full-stack payment tracking system with automated WhatsApp reminders. Built with Flask, Supabase, and deployed on Vercel.</p>
+        <div class="fp-tags">
+          <span class="tech-pill">Flask</span><span class="tech-pill">Python</span><span class="tech-pill">Supabase</span>
+          <span class="tech-pill">Vercel</span><span class="tech-pill">REST API</span>
+        </div>
+        <div class="fp-ctas">
+          <a href="projects.html" class="btn btn-primary" data-page><span class="btn-text">View Project</span> →</a>
+          <a href="#" class="btn btn-ghost">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="fp-right">
+        <div class="browser-mockup">
+          <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span></div>
+          <div class="browser-body"><div class="project-img-placeholder"><span>📊</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS TEASER ── -->
+<section class="skills-teaser section">
+  <div class="container">
+    <div class="section-label reveal">// Toolkit</div>
+    <h2 class="section-title reveal">Built with<br/><span class="gradient-text">precision.</span></h2>
+    <div class="skills-teaser-grid">
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">⚡</span><span class="st-name">JavaScript</span></div>
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">🐍</span><span class="st-name">Python</span></div>
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">💙</span><span class="st-name">Flutter</span></div>
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">🔥</span><span class="st-name">Flask</span></div>
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">⚛️</span><span class="st-name">React</span></div>
+      <div class="skill-teaser-card glass-card reveal"><span class="st-icon">🗄️</span><span class="st-name">Supabase</span></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="skills.html" class="btn btn-ghost reveal" data-page>Explore Full Arsenal →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section section">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title reveal">Let's build<br/><span class="gradient-text">something great.</span></h2>
+    <p class="reveal" style="max-width:520px;margin:0 auto 40px;color:var(--text-secondary);">I'm always open to interesting conversations, collaborations, and opportunities.</p>
+    <div class="cta-actions reveal">
+      <a href="contact.html" class="btn btn-primary" data-page><span class="btn-text">Start a Conversation</span> →</a>
+      <a href="projects.html" class="btn btn-ghost" data-page>See My Work</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span class="footer-logo"><span class="logo-bracket">&lt;</span>S<span class="logo-bracket">/&gt;</span> Sanskar Sharma</span>
+  <span class="footer-copy">© 2025 · Built with obsession ✦</span>
+  <a href="#" class="footer-top">↑ Back to top</a>
+</div></footer>
+
+<script src="js/loader.js"></script>
+<script src="js/app.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/home.js"></script>
+<script src="js/microinteractions.js"></script>
+</body></html>
