@@ -1,4 +1,4 @@
-/* ══ HOME PAGE JS ══ */
+/* ══ HOME PAGE JS — REBUILT ══ */
 (function() {
 'use strict';
 
@@ -9,31 +9,48 @@ window.initHeroLetters = function() {
   let globalDelay = 0;
   heroName.querySelectorAll('.name-row').forEach(row => {
     const word = row.dataset.word || '';
-    const isGrad = row.classList.contains('gradient-text');
     row.innerHTML = '';
     [...word].forEach((ch, i) => {
       const s = document.createElement('span');
       s.className = 'hero-letter';
       s.textContent = ch;
-      s.style.transitionDelay = `${globalDelay + i * 0.04}s`;
+      s.style.transitionDelay = `${globalDelay + i * 0.05}s`;
       row.appendChild(s);
     });
-    if (isGrad) {
-      row.style.cssText += 'background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;';
-    }
-    globalDelay += word.length * 0.04 + 0.1;
+    globalDelay += word.length * 0.05 + 0.2;
   });
   setTimeout(() => {
     heroName.querySelectorAll('.hero-letter').forEach(l => l.classList.add('visible'));
-  }, 350);
+  }, 400);
 };
+
+// ── HERO ENTRY ANIMATIONS (after loader) ──
+window.initHeroEntries = function() {
+  // Trigger .hero-anim elements
+  document.querySelectorAll('.hero-anim').forEach(el => {
+    setTimeout(() => el.classList.add('in'), 50);
+  });
+  // Trigger portrait entrance
+  const portrait = document.getElementById('heroPortrait');
+  if (portrait) {
+    setTimeout(() => portrait.classList.add('in'), 300);
+  }
+};
+
+// Auto-init if no loader
+if (!document.getElementById('loader')) {
+  setTimeout(() => {
+    if (window.initHeroLetters) window.initHeroLetters();
+    if (window.initHeroEntries) window.initHeroEntries();
+  }, 100);
+}
 
 // ── TYPEWRITER ─────────────────────────────
 const twEl = document.getElementById('typewriterText');
 if (twEl) {
-  const lines = ['Full Stack Developer','App Developer','Product Builder','Future Founder'];
+  const lines = ['Full Stack Developer','App Developer','Product Builder','Future Startup Founder'];
   let li = 0, ci = 0, del = false;
-  const s = { t:60, d:35, pause:2000, short:500 };
+  const s = { t:50, d:30, pause:1500, short:500 };
   function step() {
     const cur = lines[li];
     if (!del) {
@@ -45,27 +62,57 @@ if (twEl) {
     }
     setTimeout(step, del ? s.d : s.t);
   }
-  setTimeout(step, 1600);
+  setTimeout(step, 1800);
 }
 
-// ── AVATAR MOUSE REACTIVE HALO ─────────────
-const halo = document.getElementById('avatarHalo');
-if (halo && window.matchMedia('(pointer:fine)').matches) {
-  document.addEventListener('mousemove', e => {
-    const cx = e.clientX / window.innerWidth;
-    const cy = e.clientY / window.innerHeight;
-    const ox = (cx - 0.5) * 60;
-    const oy = (cy - 0.5) * 60;
-    halo.style.background = `radial-gradient(circle at ${50+ox*0.5}% ${50+oy*0.5}%, rgba(99,179,237,0.22) 0%, rgba(159,122,234,0.14) 50%, transparent 70%)`;
-    halo.style.transform = `translate(${ox*0.1}px, ${oy*0.1}px)`;
-  }, { passive: true });
+// ── HERO PORTRAIT MOUSE REACTIVITY ────────
+const portrait = document.getElementById('heroPortrait');
+const glowBlue = document.getElementById('glowBlue');
+const portraitFrame = portrait ? portrait.querySelector('.portrait-frame') : null;
+
+if (portrait && window.matchMedia('(pointer:fine)').matches) {
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.addEventListener('mousemove', e => {
+      const rect = hero.getBoundingClientRect();
+      const cx = (e.clientX - rect.left) / rect.width;
+      const cy = (e.clientY - rect.top) / rect.height;
+
+      // Glow follows cursor at 0.06× — max 30px shift
+      if (glowBlue) {
+        const gx = 50 + (cx - 0.5) * 12;
+        const gy = 10 + (cy - 0.5) * 8;
+        glowBlue.style.left = gx + '%';
+        glowBlue.style.top = gy + '%';
+      }
+
+      // 3D perspective tilt — max ±4°
+      if (portraitFrame) {
+        const rx = (cy - 0.5) * -8;
+        const ry = (cx - 0.5) * 8;
+        portraitFrame.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      }
+    }, { passive: true });
+
+    hero.addEventListener('mouseleave', () => {
+      if (portraitFrame) {
+        portraitFrame.style.transform = '';
+        portraitFrame.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
+        setTimeout(() => { if (portraitFrame) portraitFrame.style.transition = 'transform 0.1s ease'; }, 700);
+      }
+      if (glowBlue) {
+        glowBlue.style.left = '50%';
+        glowBlue.style.top = '10%';
+      }
+    });
+  }
 }
 
-// ── SCROLL INDICATOR HIDE ──────────────────
-const si = document.getElementById('scrollIndicator');
-if (si) {
+// ── SCROLL CUE HIDE ──────────────────────
+const scrollCue = document.getElementById('scrollCue');
+if (scrollCue) {
   window.addEventListener('scroll', () => {
-    si.classList.toggle('hidden', window.scrollY > window.innerHeight * 0.3);
+    scrollCue.classList.toggle('hidden', window.scrollY > 80);
   }, { passive: true });
 }
 

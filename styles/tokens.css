@@ -24,8 +24,8 @@
   --transition-theme: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ── FONTS ── */
-  --font-display: 'Bebas Neue', 'DM Serif Display', serif;
-  --font-body: 'Sora', 'Outfit', sans-serif;
+  --font-display: 'Clash Display', 'Sora', sans-serif;
+  --font-body: 'Geist', 'Sora', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* ── TYPE SCALE (8px grid, fluid) ── */

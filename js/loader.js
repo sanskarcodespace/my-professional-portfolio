@@ -92,8 +92,11 @@ const pi = setInterval(() => {
 }, 35);
 
 function cascadeHero() {
+  // Support both old pages (hero-entry) and rebuilt hero (hero-anim)
   document.querySelectorAll('.hero-entry').forEach((el,i) => setTimeout(() => el.classList.add('in'), i*120));
+  document.querySelectorAll('.hero-anim').forEach(el => setTimeout(() => el.classList.add('in'), 50));
   if (typeof window.initHeroLetters === 'function') setTimeout(window.initHeroLetters, 100);
+  if (typeof window.initHeroEntries === 'function') setTimeout(window.initHeroEntries, 150);
 }
 
 function boot() {
