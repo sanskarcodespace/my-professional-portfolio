@@ -48,21 +48,26 @@ if (!document.getElementById('loader')) {
 // ── TYPEWRITER ─────────────────────────────
 const twEl = document.getElementById('typewriterText');
 if (twEl) {
-  const lines = ['Full Stack Developer','App Developer','Product Builder','Future Startup Founder'];
+  const lines = [
+    'Building the future before it exists.',
+    'Full Stack Developer & Builder',
+    'Product Intern @ PixiePlot',
+    'Future AI Startup Founder'
+  ];
   let li = 0, ci = 0, del = false;
-  const s = { t:50, d:30, pause:1500, short:500 };
+  const s = { t: 55, d: 30, pause: 2000, short: 500 };
   function step() {
     const cur = lines[li];
     if (!del) {
       twEl.textContent = cur.slice(0, ++ci);
-      if (ci === cur.length) { del=true; setTimeout(step,s.pause); return; }
+      if (ci === cur.length) { del = true; setTimeout(step, s.pause); return; }
     } else {
       twEl.textContent = cur.slice(0, --ci);
-      if (ci === 0) { del=false; li=(li+1)%lines.length; setTimeout(step,s.short); return; }
+      if (ci === 0) { del = false; li = (li + 1) % lines.length; setTimeout(step, s.short); return; }
     }
     setTimeout(step, del ? s.d : s.t);
   }
-  setTimeout(step, 1800);
+  setTimeout(step, 1400);
 }
 
 // ── HERO PORTRAIT MOUSE REACTIVITY ────────

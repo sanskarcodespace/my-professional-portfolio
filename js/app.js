@@ -107,41 +107,7 @@ function initHeroLetters() {
 }
 initHeroLetters();
 
-// ── TYPEWRITER ─────────────────────────────
-const typewriterEl = document.getElementById('typewriterText');
-if (typewriterEl) {
-  const lines = [
-    'Building the future before it exists.',
-    'Crafting AI-powered experiences.',
-    'From Patna to the world.',
-    'Full Stack · Flutter · AI.'
-  ];
-  let lineIdx = 0, charIdx = 0, deleting = false;
-  const speed = { type: 58, delete: 32, pause: 2200, pauseShort: 600 };
-
-  function typeStep() {
-    const currentLine = lines[lineIdx];
-    if (!deleting) {
-      typewriterEl.textContent = currentLine.slice(0, ++charIdx);
-      if (charIdx === currentLine.length) {
-        deleting = true;
-        setTimeout(typeStep, speed.pause);
-        return;
-      }
-    } else {
-      typewriterEl.textContent = currentLine.slice(0, --charIdx);
-      if (charIdx === 0) {
-        deleting = false;
-        lineIdx = (lineIdx + 1) % lines.length;
-        setTimeout(typeStep, speed.pauseShort);
-        return;
-      }
-    }
-    setTimeout(typeStep, deleting ? speed.delete : speed.type);
-  }
-  // Delay start until after letter animation
-  setTimeout(typeStep, 1400);
-}
+// Typewriter handled exclusively by js/home.js on index.html
 
 // ── TAGLINE GRADIENT MOUSE SHIFT ───────────
 const taglineEl = document.querySelector('.tagline-static');
